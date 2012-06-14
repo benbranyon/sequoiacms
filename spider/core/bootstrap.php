@@ -3,6 +3,9 @@
 //$conf = parse_ini_file('../config/application.ini', TRUE);
 //define config file here
 
+$conf['time']['default_timezone'] = 'America/Los_Angeles';
+$conf['site']['BASE_DIR'] = 'spider';
+
 //[site]
 define('BASE_DIR', $conf['site']['BASE_DIR']);
 
@@ -69,4 +72,4 @@ define ('HTTP_PATH', 'http://' . $_SERVER['SERVER_NAME'] . '/' . BASE_DIR);
 define ('FS_PATH', $_SERVER['DOCUMENT_ROOT'] . '/' . BASE_DIR);
 define ('REQUEST_URI', preg_replace('/\?' . $_SERVER['QUERY_STRING'] . '/i','', $_SERVER['REQUEST_URI']));
 
-require_once (BASE_DIR . 'router' . EXT);	
+require_once (BASE_DIR . '/core/router' . EXT);	
