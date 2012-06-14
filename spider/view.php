@@ -3,10 +3,6 @@
 class View {
 	public $arr = array();
 	public $file;
-
-	public function __construct($file) {
-		$this->file = $file;
-	}
 	
 	protected function get_sub_views($obj) {
 		foreach ($obj as $varname => $var) {
@@ -28,7 +24,8 @@ class View {
 		return $html;
 	}
 
-	public function render() {
+	public function render($input_file) {
+		$this->file = $input_file;
 		echo self::get_sub_views($this);
 	}
 }
