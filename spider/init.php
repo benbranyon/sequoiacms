@@ -3,24 +3,26 @@
 function callHook(){
 
 	$url = REQUEST_URI;
+
 	// strip out our query string
 	$url = preg_replace('/\?.+$/i', '', $url);
-	
+	$url = trim($url,'/');
+
 	//explode the url
 	$urlArray = array();
 	$urlArray = explode('/', $url);
-
+	
 	//for an empty string we assume the user wants to access index/indes
 	if(count($urlArray) < 2){
+		$urlArray[1] = "index";
 		$urlArray[2] = "index";
-		$urlArray[3] = "index";
-	}elseif(count($urlArray) < 4){
+	}elseif(count($urlArray) < 3){
 		$urlArray[2] = "index";
 	}
 	
-	$controller = $urlArray[2];
+	$controller = $urlArray[1];
 	array_shift($urlArray);
-	$action = $urlArray[2];
+	$action = $urlArray[1];
 	array_shift($urlArray);
 	$params = array_map('urldecode', $urlArray);
 	
