@@ -1,6 +1,7 @@
 <?php
 
 define('ROOT', dirname(__FILE__));
+
 /*
  * --------------------------------------------------------------------
  * LOAD THE BOOTSTRAP FILE
@@ -9,4 +10,4 @@ define('ROOT', dirname(__FILE__));
  * And away we go...
  *
  */
-require_once 'spider/bootstrap.php';
+require_once 'spider/core/bootstrap.php';

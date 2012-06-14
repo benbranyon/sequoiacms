@@ -1,6 +1,6 @@
 <?php
 
-$conf = parse_ini_file('config/application.ini', TRUE);
+//$conf = parse_ini_file('../config/application.ini', TRUE);
 
 //[site]
 define('BASE_DIR', $conf['site']['BASE_DIR']);

@@ -55,9 +55,9 @@ function __autoload($className) {
 	if (file_exists(ROOT . '/db/' . strtolower($className) . EXT)) {
 		require_once(ROOT . '/db/' . strtolower($className) . EXT);
 	}
-
-	if (file_exists(ROOT . '/spider/' . strtolower($className) . EXT)) {
-		require_once(ROOT . '/spider/' . strtolower($className) . EXT);
+	
+	if (file_exists(ROOT . '/spider/core/' . strtolower($className) . EXT)) {
+		require_once(ROOT . '/spider/core/' . strtolower($className) . EXT);
 	}
 
 	if (file_exists(ROOT . '/lib/' . strtolower($className) . EXT)) {
