@@ -3,6 +3,9 @@
 class View {
 	public $arr = array();
 	public $file;
+    
+	//Holds variables assigned to template
+    private $data = array();
 	
 	protected function get_sub_views($obj) {
 		foreach ($obj as $varname => $var) {
@@ -28,4 +31,15 @@ class View {
 		$this->file = $input_file;
 		echo self::get_sub_views($this);
 	}
+	
+    /**
+     * Receives assignments from controller and stores in local data array
+     * 
+     * @param $variable
+     * @param $value
+     */
+    public function set($variable , $value)
+    {
+        $this->data[$variable] = $value;
+    }
 }
