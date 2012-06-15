@@ -3,7 +3,8 @@
 class GalleryController {
 
 	public function index() {
-		$view->render('light.php');
+		$view = new View();
+		$view->render('gallery/index.php');
 	}
 
 }

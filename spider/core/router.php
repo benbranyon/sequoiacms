@@ -55,15 +55,22 @@ function __autoload($className) {
 	if (file_exists(ROOT . '/db/' . strtolower($className) . EXT)) {
 		require_once(ROOT . '/db/' . strtolower($className) . EXT);
 	}
-	
-	if (file_exists(ROOT . '/spider/core/' . strtolower($className) . EXT)) {
-		require_once(ROOT . '/spider/core/' . strtolower($className) . EXT);
-	}
 
 	if (file_exists(ROOT . '/lib/' . strtolower($className) . EXT)) {
 		require_once(ROOT . '/lib/' . strtolower($className) . EXT);
 	}
 	
+	//load core classes
+	if (file_exists(ROOT . '/spider/core/' . strtolower($className) . EXT)) {
+		require_once(ROOT . '/spider/core/' . strtolower($className) . EXT);
+	}
+	
+	//load system controllers and models
+	if (file_exists(ROOT . '/spider/controllers/' . strtolower(preg_replace("/controller/i", "", $className)) . EXT)) {
+		require_once(ROOT . '/spider/controllers/' . strtolower(preg_replace("/controller/i", "", $className)) . EXT);
+	}
+	
+	//Load application controllers and models
 	if (file_exists(ROOT . '/application/controllers/' . strtolower(preg_replace("/controller/i", "", $className)) . EXT)) {
 		require_once(ROOT . '/application/controllers/' . strtolower(preg_replace("/controller/i", "", $className)) . EXT);
 	}
@@ -71,6 +78,21 @@ function __autoload($className) {
 	if (file_exists(ROOT . '/application/models/' . strtolower($className) . EXT)) {
 		require_once(ROOT . '/application/models/' . strtolower($className) . EXT);
 	}
+	/*
+	 *      ====================
+	 *		|Load Admin Module |
+	 *		====================
+	 */
+	 //load admin core classes
+	 if (file_exists(ROOT . '/spider/modules/admin/core/' .strtolower($className) . EXT)){
+		require_once(ROOT . '/spider/modules/admin/core/' .strtolower($className) .EXT);
+	 }
+	 
+	//Load admin controllers and models
+	if (file_exists(ROOT . '/spider/modules/admin/controllers/' . strtolower(preg_replace("/controller/i", "", $className)) . EXT)) {
+		require_once(ROOT . '/spider/modules/admin/controllers/' . strtolower(preg_replace("/controller/i", "", $className)) . EXT);
+	}
+	
 }
 
 try {
