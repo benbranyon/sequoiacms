@@ -1,4 +1,4 @@
 spidercms
 =========
 
-PHP 5 MVC Framework
+PHP 5 MVC Framework/CMS
