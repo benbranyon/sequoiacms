@@ -52,8 +52,8 @@ function callHook(){
 /** Autoload any classes that are required **/
 
 function __autoload($className) {
-	if (file_exists(ROOT . '/db/' . strtolower($className) . EXT)) {
-		require_once(ROOT . '/db/' . strtolower($className) . EXT);
+	if (file_exists(ROOT . '/spider/database/' . strtolower($className) . EXT)) {
+		require_once(ROOT . '/spider/database/' . strtolower($className) . EXT);
 	}
 
 	if (file_exists(ROOT . '/lib/' . strtolower($className) . EXT)) {
