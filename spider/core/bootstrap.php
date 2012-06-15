@@ -2,12 +2,10 @@
 
 //$conf = parse_ini_file('../config/application.ini', TRUE);
 //define config file here
-
-$conf['time']['default_timezone'] = 'America/Los_Angeles';
-$conf['site']['BASE_DIR'] = 'spider';
+require_once('application/config/config.php');
 
 //[site]
-define('BASE_DIR', $conf['site']['BASE_DIR']);
+define('BASE_DIR', $config['BASE_DIR']);
 
 define('EXT', '.php');
 
@@ -15,7 +13,7 @@ define('EXT', '.php');
  * date.timezone setting
  *
  */
-date_default_timezone_set($conf['time']['default_timezone']);
+date_default_timezone_set($config['default_timezone']);
 
 /*
  *---------------------------------------------------------------
@@ -63,6 +61,14 @@ if (defined('ENVIRONMENT'))
 			exit('The application environment is not set correctly.');
 	}
 }
+
+/*
+ * DATABASE CONNECTION
+ *
+ */
+ 
+ //load database config
+ require_once('application/config/database.php');
 
 /*
  * path info
