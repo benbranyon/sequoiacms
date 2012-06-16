@@ -26,8 +26,8 @@ date_default_timezone_set($config['default_timezone']);
  *
  * This can be set to anything, but default usage is:
  *
- *     development
- *     testing
+ *     dev
+ *     staging
  *     production
  *
  * NOTE: If you change these, also change the error_reporting() code below
