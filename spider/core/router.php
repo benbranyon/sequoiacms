@@ -52,10 +52,11 @@ function callHook(){
 /** Autoload any classes that are required **/
 
 function __autoload($className) {
-	if (file_exists(ROOT . '/spider/database/' . strtolower($className) . EXT)) {
-		require_once(ROOT . '/spider/database/' . strtolower($className) . EXT);
-	}
-
+	//if (file_exists(ROOT . '/spider/database/' . strtolower($className) . EXT)) {
+	//	require_once(ROOT . '/spider/database/' . strtolower($className) . EXT);
+	//}
+	
+	// load libraries
 	if (file_exists(ROOT . '/lib/' . strtolower($className) . EXT)) {
 		require_once(ROOT . '/lib/' . strtolower($className) . EXT);
 	}

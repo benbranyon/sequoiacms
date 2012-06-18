@@ -69,6 +69,12 @@ if (defined('ENVIRONMENT'))
  
  //load database config
  require_once('application/config/database.php');
+ require_once('spider/database/database.php');
+ 
+ //Connect to database
+ require_once('spider/database/database_conn.php');
+ $db_conn = new database_conn();
+ $db_conn->connect();
 
 /*
  * path info
