@@ -41,7 +41,7 @@ function callHook(){
 		if(method_exists($dispatch, $action)){
 			call_user_func_array(array($dispatch, $action), $params);
 		} else {
-			throw new Exceptions("Invalid call to non-existent action");
+			throw new Exception("Invalid call to non-existent action");
 		}
 	}catch (Exception $e) {
 		echo "<pre>".$e->getMessage()."</pre>";

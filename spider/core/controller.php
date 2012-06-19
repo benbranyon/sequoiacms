@@ -2,25 +2,25 @@
 
 abstract class Controller {
 
-	/**
-	 * The layout being used by the controller.
-	 *
-	 * @var string
-	 */
+/**
+ * The layout being used by the controller.
+ *
+ * @var string
+ */
 	public $layout;
 
-	/**
-	 * The module the controller belongs to.
-	 *
-	 * @var string
-	 */
+/**
+ * The module the controller belongs to.
+ *
+ * @var string
+ */
 	public $module;
 	
-	/**
-	 * Create a new Controller instance.
-	 *
-	 * @return void
-	 */
+/**
+ * Create a new Controller instance.
+ *
+ * @return void
+ */
 	public function __construct()
 	{
 		// If the controller has specified a layout to be used when rendering
@@ -32,11 +32,11 @@ abstract class Controller {
 		}
 	}
 	
-	/**
-	 * Create the layout that is assigned to the controller.
-	 *
-	 * @return View
-	 */
+/**
+ * Create the layout that is assigned to the controller.
+ *
+ * @return View
+ */
 	public function layout()
 	{
 		if (starts_with($this->layout, 'name: '))
@@ -45,5 +45,11 @@ abstract class Controller {
 		}
 
 		return View::make($this->layout);
+	}
+	
+	
+	public function redirect($controller, $action)
+	{
+		header("Location: ".HTTP_PATH.'/'.$controller.'/'.$action);
 	}
 }

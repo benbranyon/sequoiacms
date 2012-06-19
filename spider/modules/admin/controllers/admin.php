@@ -42,6 +42,12 @@ class AdminController extends Controller
 	 */
 	public function login()
 	{
+		$view = new Adminview();
+		if(!empty($_POST))
+		{
+			$this->redirect('admin', 'index');
+		}
+		$view->render('login.php');
 	}
 	
 	/**

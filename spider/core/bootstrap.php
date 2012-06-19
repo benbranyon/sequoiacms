@@ -5,6 +5,7 @@
 require_once('application/config/config.php');
 
 //[site]
+define('SYS_DIR', 'spider');
 define('BASE_DIR', $config['BASE_DIR']);
 
 define('EXT', '.php');
@@ -63,6 +64,20 @@ if (defined('ENVIRONMENT'))
 }
 
 /*
+ * path info
+ *
+ */
+define ('HTTP_PATH', 'http://' . $_SERVER['SERVER_NAME'] . '/' . BASE_DIR);
+define ('FS_PATH', $_SERVER['DOCUMENT_ROOT'] . '/' . BASE_DIR);
+define ('REQUEST_URI', preg_replace('/\?' . $_SERVER['QUERY_STRING'] . '/i','', $_SERVER['REQUEST_URI']));
+
+/*
+ * Layout info
+ *
+ */
+define ('LAYOUT', $config['layout']);
+
+/*
  * DATABASE CONNECTION
  *
  */
@@ -74,14 +89,6 @@ if (defined('ENVIRONMENT'))
  //Connect to database
  require_once('spider/database/database_conn.php');
  $db_conn = new database_conn();
- $db_conn->connect();
+ $db_conn->connect($db_default);
 
-/*
- * path info
- *
- */
-define ('HTTP_PATH', 'http://' . $_SERVER['SERVER_NAME'] . '/' . BASE_DIR);
-define ('FS_PATH', $_SERVER['DOCUMENT_ROOT'] . '/' . BASE_DIR);
-define ('REQUEST_URI', preg_replace('/\?' . $_SERVER['QUERY_STRING'] . '/i','', $_SERVER['REQUEST_URI']));
-
-require_once (BASE_DIR . '/core/router' . EXT);	
+require_once (SYS_DIR . '/core/router' . EXT);	

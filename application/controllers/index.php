@@ -3,9 +3,9 @@
 class IndexController extends Controller {
 
 	public function index() {
-		$view = new View();
-		$view->set('shit', 12 );
-		$view->render('home/index.php');
+		$layout = new Layout();
+		$layout->set('shit', 12 );
+		$layout->render('home/index.php');
 	}
 
 }

@@ -1,6 +1,6 @@
 <?php
 
-class View {
+class Layout{
 	public $arr = array();
 	public $file;
     
@@ -26,10 +26,19 @@ class View {
 
 		return $html;
 	}
-
-	public function render($input_file) {
+	
+	public function getContent($input_file)
+	{
 		$this->file = $input_file;
 		echo self::get_sub_views($this);
+	}
+
+	public function render($input_file) {
+		if (file_exists(ROOT . '/application/views/layouts/'.LAYOUT.'.html'))
+		{
+			include ROOT . '/application/views/layouts/'.LAYOUT.'.html';
+		}
+		$this->set('input_file',$input_file);
 	}
 	
     /**
