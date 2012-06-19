@@ -1,8 +1,26 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+	<title><?php echo $input_file;?></title>
+	<link rel="stylesheet" type="text/css" href="application/public/css/styles.css" />
 </head>
 <body>
-	<?php echo $this->getContent($input_file); ?>
+	<div id="container">
+		<div id="header">
+			<div id="header-content">
+				<div id="header-nav">
+				</div>
+			</div>
+		</div>
+		
+		<div id="content-wrapper">
+			<div id="content">
+				<?php echo $this->getContent($input_file); ?>
+			</div>
+		</div>
+		
+		<div id="footer">
+		</div>
+	</div>
 </body>
 </html>
