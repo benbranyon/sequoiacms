@@ -61,9 +61,14 @@ function __autoload($className) {
 		require_once(ROOT . '/lib/' . strtolower($className) . EXT);
 	}
 	
-	//load core classes
+	// load core classes
 	if (file_exists(ROOT . '/spider/core/' . strtolower($className) . EXT)) {
 		require_once(ROOT . '/spider/core/' . strtolower($className) . EXT);
+	}
+	
+	// load core helpers
+	if (file_exists(ROOT . '/spider/helpers/' . strtolower($className) . EXT)) {
+		require_once(ROOT . '/spider/helpers/' . strtolower($className) . EXT);
 	}
 	
 	//load system controllers and models
@@ -79,6 +84,7 @@ function __autoload($className) {
 	if (file_exists(ROOT . '/application/models/' . strtolower($className) . EXT)) {
 		require_once(ROOT . '/application/models/' . strtolower($className) . EXT);
 	}
+	
 	/*
 	 *      ====================
 	 *		|Load Admin Module |

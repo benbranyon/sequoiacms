@@ -13,7 +13,7 @@
 $db_default['hostname'] = 'localhost';
 $db_default['username'] = '';
 $db_default['password'] = '';
-$db_default['database'] = '';
+$db_default['database'] = 'spider';
 $db_default['dbdriver'] = 'mysql';
 $db_default['dbprefix'] = '';
 $db_default['pconnect'] = TRUE;
