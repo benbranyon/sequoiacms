@@ -8,6 +8,8 @@ abstract class Controller {
  * @var string
  */
 	public $layout;
+	
+	public $helpers;
 
 /**
  * The module the controller belongs to.
@@ -30,6 +32,8 @@ abstract class Controller {
 		{
 			$this->layout = $this->layout();
 		}
+		
+		extract($this->helpers);
 	}
 	
 /**

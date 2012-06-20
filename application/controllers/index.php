@@ -2,6 +2,7 @@
 
 class IndexController extends Controller {
 	
+	var $helpers = array('Html');
 	
 	public function index() {
 		$layout = new Layout();
