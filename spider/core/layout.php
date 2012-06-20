@@ -67,18 +67,18 @@ class Layout{
      * @param $variable
      * @param $value
      */
-    public function set($one, $two = null)
+    public function set($variable, $value = null)
     {
         //$this->data[$variable] = $value;
 		$data = null;
-		if (is_array($one)) {
-			if (is_array($two)) {
-				$data = array_combine($one, $two);
+		if (is_array($variable)) {
+			if (is_array($value)) {
+				$data = array_combine($variable, $value);
 			} else {
-				$data = $one;
+				$data = $variable;
 			}
 		} else {
-			$data = array($one => $two);
+			$data = array($variable => $value);
 		}
 		if ($data == null) {
 			return false;
