@@ -4,6 +4,6 @@ class HtmlHelper {
 
 	
 	public function link($title, $url = null, $value = null, $options = array(), $confirmMessage = false) {
-		return '<a href="'.$url.'" title="'.$title.'">'.$value.'</a>';
+		return '<a href="/'.BASE_DIR . $url.'" title="'.$title.'">'.$value.'</a>';
 	}
 }

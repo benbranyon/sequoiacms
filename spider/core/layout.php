@@ -5,7 +5,7 @@ class Layout{
 	public $file;
 	
 	// An array of names of built-in helpers to include.
-	public $helpers = array('Html');
+	public $helpers;
     
 	//Holds variables assigned to template
     private $data = array();
@@ -13,6 +13,7 @@ class Layout{
 	// Variables for the view
 	public $viewVars = array();
 	
+
 	protected function get_sub_views($obj) {
 		foreach ($obj as $varname => $var) {
 			if ($var instanceof View) {
@@ -30,7 +31,9 @@ class Layout{
 				$___dataForView = $this->viewVars;
 			}
 			extract($___dataForView, EXTR_SKIP);
-			ob_start();
+			
+			//Create HtmlHelper
+			$html = new HtmlHelper();
 			
 			// include view file
 			include ROOT . '/application/views/' . $obj->file;

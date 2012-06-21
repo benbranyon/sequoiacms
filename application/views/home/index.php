@@ -1,3 +1,6 @@
-<?php echo $shit;?>
-<?php $html = new HtmlHelper();?>
-<?php echo $html->link('test');?>
+<div>
+<?php echo $test;?>
+</div>
+<div>
+<?php echo $html->link('Admin panel','/admin/index','Admin Panel');?>
+</div>
