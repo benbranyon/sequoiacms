@@ -3,6 +3,18 @@ header {
 	height:138px;
 }
 
+#header-content {
+	width:980px;
+	margin: 0 auto;
+	height:138px;
+}
+
+header #user-nav {
+	font-size: 11px;
+	margin: 45px 0 0 0;
+	float: right;
+}
+
 nav ul#header-nav {
 	height:35px;
 	padding: 14px 0 2px 0;
