@@ -45,6 +45,8 @@ class AdminController extends Controller
 		$view = new Adminview();
 		if(!empty($_POST))
 		{
+			$username = stripslashes($_POST['username']);
+			$password = md5($_POST['password']);
 			$this->redirect('admin', 'index');
 		}
 		$view->render('login.php');
