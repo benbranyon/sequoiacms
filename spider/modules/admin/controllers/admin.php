@@ -29,9 +29,16 @@ class AdminController extends Controller
  	 */
  	public function index()
 	{
-		$view = new Adminview();
-		$view->set('headerMessage', 'Admin Panel'  );
-		$view->render('index.php');
+		if(!isset($_SESSION['user_id']))
+		{
+			$this->redirect('admin/login');
+		}
+		else
+		{
+			$view = new Adminview();
+			$view->set('headerMessage', 'Admin Panel'  );
+			$view->render('index.php');
+		}
 	}
 	
 	/**
