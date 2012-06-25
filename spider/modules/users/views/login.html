@@ -1,0 +1,18 @@
+<h2>Login</h2>
+<form>
+<ul>
+	<li>
+		<label for="email">Email</label>
+	</li>
+	<li>
+		<label for="password">Password</label>
+		<input type="password" id="password" name="password" maxlength="20" />
+	</li>
+	<li id="remember_me">
+		<label>Remember Me</label>
+	</li>
+	<li class="reset_pass">
+	</li>
+	<input type="submit" value="<?php echo lang('user_login_btn') ?>" name="btnLogin" /> <span class="register"> | <?php echo anchor('register', lang('user_register_btn'));?></span>
+</ul>
+</form>

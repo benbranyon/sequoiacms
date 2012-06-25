@@ -1,3 +1,7 @@
+h2 {
+	font-size: 24px;
+}
+
 header {
 	background: #232323;
 	height:138px;
@@ -31,4 +35,10 @@ nav ul#header-nav {
 #content {
 	min-height: 500px;
 	padding: 15px 0 150px 0;
+}
+
+section.post {
+	padding: 20px;
+	font-size: 14px;
+	text-shadow: 1px 1px white;
 }

@@ -86,9 +86,9 @@ function __autoload($className) {
 	}
 	
 	/*
-	 *      ====================
-	 *		|Load Admin Module |
-	 *		====================
+	 *      ================
+	 *		| Load Admin Module |
+	 *		================
 	 */
 	 //load admin core classes
 	 if (file_exists(ROOT . '/spider/modules/admin/core/' .strtolower($className) . EXT)){
@@ -98,6 +98,17 @@ function __autoload($className) {
 	//Load admin controllers and models
 	if (file_exists(ROOT . '/spider/modules/admin/controllers/' . strtolower(preg_replace("/controller/i", "", $className)) . EXT)) {
 		require_once(ROOT . '/spider/modules/admin/controllers/' . strtolower(preg_replace("/controller/i", "", $className)) . EXT);
+	}
+	
+		/*
+	 *      ================
+	 *		| Load Users Module |
+	 *		================
+	 */
+	 //load users controllers
+	 
+	if (file_exists(ROOT . '/spider/modules/users/controllers/' . strtolower(preg_replace("/controller/i", "", $className)) . EXT)) {
+		require_once(ROOT . '/spider/modules/users/controllers/' . strtolower(preg_replace("/controller/i", "", $className)) . EXT);
 	}
 	
 }
