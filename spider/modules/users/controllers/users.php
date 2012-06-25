@@ -15,7 +15,7 @@ class UsersController extends Controller
 */
 	public function login()
 	{
-		$view = new Adminview();
+		$view = new Layout();
 		if(!empty($_POST))
 		{
 			$username = stripslashes($_POST['username']);
