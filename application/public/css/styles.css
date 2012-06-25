@@ -2,3 +2,12 @@ header {
 	background: #232323;
 	height:138px;
 }
+
+#content-wrapper {
+	background-color:#6D7B8D;
+}
+
+#content {
+	min-height: 500px;
+	padding: 15px 0 150px 0;
+}
