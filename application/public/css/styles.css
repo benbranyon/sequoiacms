@@ -3,8 +3,17 @@ header {
 	height:138px;
 }
 
+nav ul#header-nav {
+	height:35px;
+	padding: 14px 0 2px 0;
+	margin: 0 auto;
+}
+
 #content-wrapper {
 	background-color:#6D7B8D;
+	min-height: 500px;
+	margin: 0 auto;
+	width: 980px;
 }
 
 #content {
