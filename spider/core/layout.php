@@ -57,7 +57,10 @@ class Layout{
 
 		if (file_exists(ROOT . '/application/views/layouts/'.LAYOUT.'.html'))
 		{
+			//Create HtmlHelper
+			$html = new HtmlHelper();
 			include ROOT . '/application/views/layouts/'.LAYOUT.'.html';
+			
 		} else {
 			throw new Exception("The layout file " . ROOT . "/application/views/layouts/" . LAYOUT.".html is not available. Please create this file or change your layout in Config.");
 		}
