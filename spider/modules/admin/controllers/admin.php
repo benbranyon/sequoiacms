@@ -29,7 +29,7 @@ class AdminController extends Controller
  	 */
  	public function index()
 	{
-		if(!isset($_SESSION['user_id']))
+		if(!isset($_SESSION['user_id']) && $_SESSION['user_group'] != 'admin')
 		{
 			$this->redirect('admin/login');
 		}
