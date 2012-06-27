@@ -1,3 +1,4 @@
+<div id="admin-login">
 	<form method="POST" action="login" id="login">
 		<h1>Log In</h1>
 		<fieldset id="inputs">
@@ -6,6 +7,7 @@
 		</fieldset>
 		<fieldset id="actions">
 			<input type="submit" id="submit" value="Log in">
-			<a href="">Forgot your password?</a><a href="">Register</a>
+			<a href="">Forgot your password?</a>
 		</fieldset>
 	</form>
+</div>
