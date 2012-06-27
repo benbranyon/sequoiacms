@@ -38,7 +38,7 @@ class Layout{
 			// include view file
 			include ROOT . '/application/views/' . $obj->file;
 			
-		} else {
+        }	else {
 			throw new Exception("The view file " . ROOT . "/application/views/" . $obj->file . " is not available");
 		}
 		$html = ob_get_clean();

@@ -1,9 +1,11 @@
-<html>
-	<form method="POST" action="login">
-			Username: <input type="text" name="username" size="15" /><br />
-			Password: <input type="password" name="pwrd" size="15" /><br />
-			<div align="center">
-				<p><input type="submit" value="Login" /></p>
-			</div>
+	<form method="POST" action="login" id="login">
+		<h1>Log In</h1>
+		<fieldset id="inputs">
+			<input id="username" type="text" placeholer="Username" autofocus required>
+			<input id="password" type="password" placeholer="Password" required>
+		</fieldset>
+		<fieldset id="actions">
+			<input type="submit" id="submit" value="Log in">
+			<a href="">Forgot your password?</a><a href="">Register</a>
+		</fieldset>
 	</form>
-</html>

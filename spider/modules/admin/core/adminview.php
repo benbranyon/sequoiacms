@@ -6,6 +6,9 @@ class Adminview {
     
 	//Holds variables assigned to template
     private $data = array();
+		
+	// Variables for the view
+	public $viewVars = array();
 	
 	protected function get_sub_views($obj) {
 		foreach ($obj as $varname => $var) {
@@ -18,6 +21,17 @@ class Adminview {
 		extract($obj->arr);
 		ob_start();
 		if (file_exists(ROOT . '/spider/modules/admin/views/' . $obj->file)) {
+			
+			//extract variables for view
+			if (empty($___dataForView)) {
+				$___dataForView = $this->viewVars;
+			}
+			extract($___dataForView, EXTR_SKIP);
+			
+			//Create HtmlHelper
+			$html = new HtmlHelper();
+			
+			// include view file
 			include ROOT . '/spider/modules/admin/views/' . $obj->file;
 		} else {
 			throw new Exception("The view file " . ROOT . "/spider/modules/admin/views/" . $obj->file . " is not available");
@@ -26,10 +40,25 @@ class Adminview {
 
 		return $html;
 	}
-
-	public function render($input_file) {
+	
+	public function getContent($input_file)
+	{
 		$this->file = $input_file;
 		echo self::get_sub_views($this);
+	}
+
+	public function render($input_file) {
+
+		if (file_exists(ROOT . '/spider/modules/admin/views/layouts/'.LAYOUT.'.html'))
+		{
+			//Create HtmlHelper
+			$html = new HtmlHelper();
+			include ROOT . '/spider/modules/admin/views/layouts/'.LAYOUT.'.html';
+			
+		} else {
+			throw new Exception("The layout file " . ROOT . "/spider/modules/admin/views/layouts/" . LAYOUT.".html is not available. Please create this file or change your layout in Config.");
+		}
+		$this->set('input_file',$input_file);
 	}
 	
     /**
@@ -38,8 +67,23 @@ class Adminview {
      * @param $variable
      * @param $value
      */
-    public function set($variable , $value)
+    public function set($variable, $value = null)
     {
-        $this->data[$variable] = $value;
+        //$this->data[$variable] = $value;
+		$data = null;
+		if (is_array($variable)) {
+			if (is_array($value)) {
+				$data = array_combine($variable, $value);
+			} else {
+				$data = $variable;
+			}
+		} else {
+			$data = array($variable => $value);
+		}
+		if ($data == null) {
+			return false;
+		}
+		$this->viewVars = $data + $this->viewVars;
+		//extract($this->viewVars);
     }
 }

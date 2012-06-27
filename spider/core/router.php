@@ -12,7 +12,7 @@ function callHook(){
 	$urlArray = array();
 	$urlArray = explode('/', $url);
 	
-	//for an empty string we assume the user wants to access index/indes
+	//for an empty string we assume the user wants to access index/index
 	if(count($urlArray) < 2){
 		$urlArray[1] = "index";
 		$urlArray[2] = "index";

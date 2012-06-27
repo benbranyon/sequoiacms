@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title><?php echo $input_file;?></title>
+	<?php echo '<link rel="stylesheet" type="text/css" href="/'.BASE_DIR.'/application/public/css/admin.css"/>';?>
+</head>
+<body>
+	<header>
+		<div id="header-content">
+			<div id="logo">
+				<h1></h1>
+				<h2 class="tag-line"></h2>
+			</div>
+			<div id="user-nav">
+				<ul>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<nav>
+		<ul id ="header-nav">
+		</ul>
+	</nav>
+	<div id="container">
+	</div>
+		
+		<div id="content-wrapper">
+			<div id="content">
+				<section class="post clearfix">
+					<?php echo $this->getContent($input_file); ?>
+				</section>
+			</div>
+		</div>
+		
+		<div id="footer-wrapper">
+			<footer>
+			</footer>
+		</div>
+	</div>
+</body>
+</html>
