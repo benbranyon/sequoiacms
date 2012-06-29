@@ -24,7 +24,7 @@ class Database
      public function execute($query)
      {
           $exec = mysql_query($query) or die("MySQL Error: " . mysql_error());
-	  return $exec;
+		  return $exec;
      }
 
 }

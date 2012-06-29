@@ -11,7 +11,7 @@
 
 //default database settings
 $db_default['hostname'] = 'localhost';
-$db_default['username'] = '';
+$db_default['username'] = 'root';
 $db_default['password'] = '';
 $db_default['database'] = 'spider';
 $db_default['dbdriver'] = 'mysql';

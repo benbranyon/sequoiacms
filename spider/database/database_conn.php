@@ -10,7 +10,7 @@ class Database_conn
 	 
 	 function select_db($db)
 	 {
-		//select a database to work with
-		$selected = mysql_select_db($db['database'], $this->connection) or die("Could not select".$db['database']);
+		//select a database to work with mysql
+		$selected = mysql_select_db($db['database'], $this->connection) or die("Could not select ".$db['database'] . " database");
 	 }
 }

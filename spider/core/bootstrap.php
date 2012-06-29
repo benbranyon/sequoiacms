@@ -90,6 +90,7 @@ define ('LAYOUT', $config['layout']);
  require_once('spider/database/database_conn.php');
  $db_conn = new database_conn();
  $db_conn->connect($db_default);
+ $db_conn->select_db($db_default);
  
  /*** begin our session ***/
 session_start();
