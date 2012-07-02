@@ -54,12 +54,11 @@ class AdminController extends Controller
 		{
 			$username = stripslashes($_POST['username']);
 			$password = md5($_POST['password']);
-			echo $username;
-			echo $password;
 			$check = mysql_query("SELECT * FROM users WHERE email = '$username' && password = '$password'")or die(mysql_error());
 			if($check)
 			{
-				echo 'YEA';exit;
+				$_SESSION['user_id'] = 1;
+				$_SESSION['user_group'] = 'admin';
 				$this->redirect('admin', 'index');
 			}
 		}
