@@ -1,3 +1,17 @@
+#header-content {
+	height: 60px;
+	color: white;
+	background-color:black;
+}
+
+#content-wrapper {
+	width: 980px;
+	margin: 0 auto;
+}
+
+.page-title { height: 30px; position:fixed; text-align: center;}
+.page-title h2 { font-size: 28px; }
+
 h1.admin-login
 {
     text-shadow: 0 1px 0 rgba(255, 255, 255, .7), 0px 2px 0 rgba(0, 0, 0, .5);

@@ -35,8 +35,12 @@ class AdminController extends Controller
 		}
 		else
 		{
+			$user_id = $_SESSION['user_id'];
+			$result = mysql_query("SELECT * FROM users WHERE id = '$user_id'")or die(mysql_error());
+			$user = mysql_fetch_object($result);
+			$user = get_object_vars($user);
 			$view = new Adminview();
-			$view->set('headerMessage', 'Admin Panel'  );
+			$view->set('user', $user );
 			$view->render('index.php');
 		}
 	}
