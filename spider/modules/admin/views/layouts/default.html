@@ -4,18 +4,44 @@
 	<title><?php echo $input_file;?></title>
 	<?php echo '<link rel="stylesheet" type="text/css" href="/'.BASE_DIR.'/application/public/css/reset.css"/>';?>
 	<?php echo '<link rel="stylesheet" type="text/css" href="/'.BASE_DIR.'/application/public/css/admin.css"/>';?>
+	<?php echo '<script type="text/javascript" src="/'.BASE_DIR.'/application/public/js/jquery-1.7.2.min.js"></script>'?>
 </head>
 <body>
 	<header>
 		<div id="header-content">
 			<div id="logo">
-				<h1></h1>
+				<?php echo $html->link('AdminHome', '', 'Un-named Website');?>
 				<h2 class="tag-line"></h2>
 			</div>
 			<div id="admin-nav">
 				<ul>
+					<li>
+						<a href="#">Content</a>
+						<ul style="display:none;">
+							<li><?php echo $html->link('Galleries', '', 'Galleries');?></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Design</a>
+						<ul style="display:none;">
+							<li><?php echo $html->link('Themes', '', 'Themes');?></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Users</a>
+						<ul style="display:none;">
+							<li><?php echo $html->link('Manage Users', '', 'Manage Users');?></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Profile</a>
+						<ul style="display:none;">
+							<li><?php echo $html->link('LogOut','','LogOut');?></li>
+						</ul>
+					</li>
 				</ul>
 			</div>
+			<div style="clear:both;"></div>
 		</div>
 	</header>
 		

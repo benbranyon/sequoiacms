@@ -1,7 +1,47 @@
-#header-content {
+header {
 	height: 60px;
 	color: white;
 	background-color:black;
+}
+
+#header-content {
+	width:980px;
+	margin: 0 auto;
+}
+
+#logo {
+	float: left;
+	padding-top:15px;
+}
+
+#logo a {
+	font-size: 16px;
+	color: white;
+	text-decoration:none;
+}
+
+#admin-nav {
+	padding-top:15px;
+}
+
+#admin-nav ul {
+	display:block;
+	float:left;
+}
+
+#admin-nav ul li {
+	margin: 0px 10px 8px 15px;
+	padding: 5px 0px 5px 0px;
+	float: left;
+	font-size: 13px;
+	background-color:grey;
+}
+
+#admin-nav ul li a {
+	padding: 20px;
+	color: white;
+	float:none;
+	text-decoration: none;
 }
 
 #content-wrapper {
@@ -9,7 +49,7 @@
 	margin: 0 auto;
 }
 
-.page-title { height: 30px; position:fixed; text-align: center;}
+.page-title { height: 30px; position:fixed; text-align: center; padding-top:15px;}
 .page-title h2 { font-size: 28px; }
 
 h1.admin-login
