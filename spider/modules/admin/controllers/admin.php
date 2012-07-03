@@ -12,7 +12,7 @@ class AdminController extends Controller
 	/**
 	 * Constructor method
 	 *
-	 * @access public
+	 * @access admin
 	 * @return void
 	 */
 	public function __construct()
@@ -24,7 +24,7 @@ class AdminController extends Controller
  	/**
  	 * Show the control panel
 	 *
-	 * @access public
+	 * @access admin
 	 * @return void
  	 */
  	public function index()
@@ -46,5 +46,25 @@ class AdminController extends Controller
 		{
 			$this->redirect('users', 'login');
 		}
+	}
+	
+/**
+ * Manage Users
+ *
+ * @access admin
+ * @return void
+ */
+	public function manage()
+	{
+		$view = new Adminview();
+		$result = mysql_query("SELECT * FROM users") or die(mysql_error());
+		$count = 0;
+		while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
+			$users[$count] = $row;
+			$count++;
+		}
+		$view->set('users', $users);
+		$view->render('manage_users.php');
+		
 	}
 }
