@@ -6,9 +6,21 @@ class Adminview {
     
 	//Holds variables assigned to template
     private $data = array();
+	
+	private $class;
 		
 	// Variables for the view
 	public $viewVars = array();
+	
+	public function __construct()
+	{
+		$trace=debug_backtrace();
+		$caller=array_shift($trace);
+		$caller=array_shift($trace);
+		$class = $caller['class'];
+		$class = strtolower($class);
+		$this->class = str_replace('controller','',$class);
+	}
 	
 	protected function get_sub_views($obj) {
 		foreach ($obj as $varname => $var) {
@@ -20,7 +32,7 @@ class Adminview {
 		}
 		extract($obj->arr);
 		ob_start();
-		if (file_exists(ROOT . '/spider/modules/admin/views/' . $obj->file)) {
+		if (file_exists(ROOT . '/spider/modules/'.$this->class.'/views/' . $obj->file)) {
 			
 			//extract variables for view
 			if (empty($___dataForView)) {
@@ -32,9 +44,9 @@ class Adminview {
 			$html = new HtmlHelper();
 			
 			// include view file
-			include ROOT . '/spider/modules/admin/views/' . $obj->file;
+			include ROOT . '/spider/modules/'.$this->class.'/views/' . $obj->file;
 		} else {
-			throw new Exception("The view file " . ROOT . "/spider/modules/admin/views/" . $obj->file . " is not available");
+			throw new Exception("The view file " . ROOT . "/spider/modules/".$this->class."/views/" . $obj->file . " is not available");
 		}
 		$html = ob_get_clean();
 
@@ -47,16 +59,17 @@ class Adminview {
 		echo self::get_sub_views($this);
 	}
 
-	public function render($input_file) {
-
-		if (file_exists(ROOT . '/spider/modules/admin/views/layouts/'.LAYOUT.'.html'))
+	public function render($input_file) 
+	{
+		
+		if (file_exists(ROOT . '/spider/modules/'.$this->class.'/views/layouts/'.LAYOUT.'.html'))
 		{
 			//Create HtmlHelper
 			$html = new HtmlHelper();
-			include ROOT . '/spider/modules/admin/views/layouts/'.LAYOUT.'.html';
+			include ROOT . '/spider/modules/'.$this->class.'/views/layouts/'.LAYOUT.'.html';
 			
 		} else {
-			throw new Exception("The layout file " . ROOT . "/spider/modules/admin/views/layouts/" . LAYOUT.".html is not available. Please create this file or change your layout in Config.");
+			throw new Exception("The layout file " . ROOT . "/spider/modules/".$this->class."/views/layouts/" . LAYOUT.".html is not available. Please create this file or change your layout in Config.");
 		}
 		$this->set('input_file',$input_file);
 	}
