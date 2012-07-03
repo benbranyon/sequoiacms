@@ -16,28 +16,28 @@
 			</div>
 			<div id="admin-nav">
 				<ul id="nav-list">
-					<li>
+					<li class="first-level-nav">
 						<a href="#">Content</a>
 						<ul style="display:none;">
 							<li><?php echo $html->link('Galleries', '', 'Galleries');?></li>
 						</ul>
 					</li>
-					<li>
+					<li class="first-level-nav">
 						<a href="#">Design</a>
 						<ul style="display:none;">
 							<li><?php echo $html->link('Themes', '', 'Themes');?></li>
 						</ul>
 					</li>
-					<li>
+					<li class="first-level-nav">
 						<a href="#">Users</a>
 						<ul style="display:none;">
 							<li><?php echo $html->link('Manage Users', '', 'Manage Users');?></li>
 						</ul>
 					</li>
-					<li>
+					<li class="first-level-nav">
 						<a href="#">Profile</a>
 						<ul style="display:none;">
-							<li><?php echo $html->link('LogOut','','LogOut');?></li>
+							<li><?php echo $html->link('LogOut','/admin/logout','LogOut');?></li>
 						</ul>
 					</li>
 				</ul>

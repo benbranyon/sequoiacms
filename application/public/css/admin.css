@@ -24,12 +24,12 @@ header {
 	padding-top:15px;
 }
 
-#admin-nav ul {
+#nav-list {
 	display:block;
 	float:left;
 }
 
-#admin-nav ul li {
+li.first-level-nav {
 	margin: 0px 10px 8px 15px;
 	padding: 5px 0px 5px 0px;
 	float: left;
@@ -37,7 +37,7 @@ header {
 	background-color:grey;
 }
 
-#admin-nav ul li a {
+#nav-list li a {
 	padding: 20px;
 	color: white;
 	float:none;
