@@ -1,4 +1,7 @@
 <div id="manage-users">
+	<div class="page-title">
+		<h2>Manage Users</h2>
+	</div>
 	<table class="admin1">
 		<thead>
 			<tr>
