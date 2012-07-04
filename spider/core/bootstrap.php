@@ -76,6 +76,7 @@ define ('REQUEST_URI', preg_replace('/\?' . $_SERVER['QUERY_STRING'] . '/i','', 
  *
  */
 define ('LAYOUT', $config['layout']);
+define ('ADMIN_LAYOUT', $config['adminlayout']);
 
 /*
  * DATABASE CONNECTION

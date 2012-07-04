@@ -19,6 +19,10 @@ class Adminview {
 		$caller=array_shift($trace);
 		$class = $caller['class'];
 		$class = strtolower($class);
+		if(strlen($class) > 5 && strpos($class, 'admin'))
+		{
+			$class = str_replace('admin','',$class);
+		}
 		$this->class = str_replace('controller','',$class);
 	}
 	
@@ -62,14 +66,14 @@ class Adminview {
 	public function render($input_file) 
 	{
 		
-		if (file_exists(ROOT . '/spider/modules/'.$this->class.'/views/layouts/'.LAYOUT.'.html'))
+		if (file_exists(ROOT . '/spider/modules/'.'admin'.'/views/layouts/'.ADMIN_LAYOUT.'.html'))
 		{
 			//Create HtmlHelper
 			$html = new HtmlHelper();
-			include ROOT . '/spider/modules/'.$this->class.'/views/layouts/'.LAYOUT.'.html';
+			include ROOT . '/spider/modules/'.'admin'.'/views/layouts/'.ADMIN_LAYOUT.'.html';
 			
 		} else {
-			throw new Exception("The layout file " . ROOT . "/spider/modules/".$this->class."/views/layouts/" . LAYOUT.".html is not available. Please create this file or change your layout in Config.");
+			throw new Exception("The layout file " . ROOT . "/spider/modules/".'admin'."/views/layouts/" . ADMIN_LAYOUT.".html is not available. Please create this file or change your layout in Config.");
 		}
 		$this->set('input_file',$input_file);
 	}

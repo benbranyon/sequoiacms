@@ -5,6 +5,7 @@ class UsersController extends Controller
 
 	public function index()
 	{
+		print_r('here in the users index');
 	}
 
 /**

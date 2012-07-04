@@ -12,23 +12,155 @@ function callHook(){
 	$urlArray = array();
 	$urlArray = explode('/', $url);
 	
-	//for an empty string we assume the user wants to access index/index
-	if(count($urlArray) < 2){
-		$urlArray[1] = "index";
-		$urlArray[2] = "index";
-	}elseif(count($urlArray) < 3){
-		$urlArray[2] = "index";
+	//Load front end controllers and actions
+	if(isset($urlArray[1]) &&isset($urlArray[2]))
+	{
+		if($urlArray[1] == 'admin' && $urlArray[2] != 'index')
+		{
+			if(count($urlArray) < 3){
+				$urlArray[2] = "index";
+				$urlArray[3] = "index";
+			}elseif(count($urlArray) < 4){
+				$urlArray[3] = "index";
+			}
+
+			//define controller
+			$controller = $urlArray[2];
+			$controller .= 'admin';
+			array_shift($urlArray);
+		
+			//define action
+			$action = $urlArray[2];
+			array_shift($urlArray);
+			$params = array_map('urldecode', $urlArray);
+	
+			$controllerName = $controller;
+			$controller = ucwords($controller);
+			$controller .= 'Controller';
+		}
+		else
+		{
+			//for an empty string we assume the user wants to access index/index
+			if(count($urlArray) < 3){
+				$urlArray[1] = "index";
+				$urlArray[2] = "index";
+			}elseif(count($urlArray) < 3){
+				$urlArray[2] = "index";
+			}
+			//define controller
+			$controller = $urlArray[1];
+			array_shift($urlArray);
+			//define action
+			$action = $urlArray[1];
+			array_shift($urlArray);
+			$params = array_map('urldecode', $urlArray);
+	
+			$controllerName = $controller;
+			$controller = ucwords($controller);
+			$controller .= 'Controller';
+		}
+	}
+	else
+	{
+		//for an empty string we assume the user wants to access index/index
+		if(isset($urlArray[1]))
+		{
+			if(count($urlArray) < 2 && $urlArray[1] !='admin'){
+				$urlArray[1] = "index";
+				$urlArray[2] = "index";
+			}elseif(count($urlArray) < 3){
+				$urlArray[2] = "index";
+			}
+		}
+		else
+		{
+			if(count($urlArray) < 2){
+				$urlArray[1] = "index";
+				$urlArray[2] = "index";
+			}elseif(count($urlArray) < 3){
+				$urlArray[2] = "index";
+			}	
+		}
+		//define controller
+		$controller = $urlArray[1];
+		array_shift($urlArray);
+		//define action
+		$action = $urlArray[1];
+		array_shift($urlArray);
+		$params = array_map('urldecode', $urlArray);
+	
+		$controllerName = $controller;
+		$controller = ucwords($controller);
+		$controller .= 'Controller';
 	}
 	
-	$controller = $urlArray[1];
-	array_shift($urlArray);
-	$action = $urlArray[1];
-	array_shift($urlArray);
-	$params = array_map('urldecode', $urlArray);
+/*	if($urlArray[1] != 'admin')
+	{
+		//for an empty string we assume the user wants to access index/index
+		if(count($urlArray) < 3){
+			$urlArray[1] = "index";
+			$urlArray[2] = "index";
+		}elseif(count($urlArray) < 3){
+			$urlArray[2] = "index";
+		}
+		//define controller
+		$controller = $urlArray[1];
+		array_shift($urlArray);
+		//define action
+		$action = $urlArray[1];
+		array_shift($urlArray);
+		$params = array_map('urldecode', $urlArray);
 	
-	$controllerName = $controller;
-	$controller = ucwords($controller);
-	$controller .= 'Controller';
+		$controllerName = $controller;
+		$controller = ucwords($controller);
+		$controller .= 'Controller';
+	}
+	//Load backend module admin controllers and actions
+	elseif($urlArray[2] != 'index')
+	{
+print_r($urlArray);
+echo '<br />';
+		if(count($urlArray) < 3){
+			$urlArray[2] = "index";
+			$urlArray[3] = "index";
+		}elseif(count($urlArray) < 4){
+			$urlArray[3] = "index";
+		}
+print_r($urlArray);
+		//define controller
+		$controller = $urlArray[2];
+		array_shift($urlArray);
+		
+		//define action
+		$action = $urlArray[2];
+		array_shift($urlArray);
+		$params = array_map('urldecode', $urlArray);
+	
+		$controllerName = $controller;
+		$controller = ucwords($controller);
+		$controller .= 'Controller';
+	}
+	else
+	{
+		//for an empty string we assume the user wants to access index/index
+		if(count($urlArray) < 3){
+			$urlArray[1] = "index";
+			$urlArray[2] = "index";
+		}elseif(count($urlArray) < 3){
+			$urlArray[2] = "index";
+		}
+		//define controller
+		$controller = $urlArray[1];
+		array_shift($urlArray);
+		//define action
+		$action = $urlArray[1];
+		array_shift($urlArray);
+		$params = array_map('urldecode', $urlArray);
+	
+		$controllerName = $controller;
+		$controller = ucwords($controller);
+		$controller .= 'Controller';	
+	}*/
 	
 	//we instantiate and call the controller methods
 	try{
@@ -90,25 +222,24 @@ function __autoload($className) {
 	 *		| Load Admin Module |
 	 *		================
 	 */
-	 //load admin core classes
-	 if (file_exists(ROOT . '/spider/modules/admin/core/' .strtolower($className) . EXT)){
-		require_once(ROOT . '/spider/modules/admin/core/' .strtolower($className) .EXT);
-	 }
 	 
 	//Load admin controllers and models
 	if (file_exists(ROOT . '/spider/modules/admin/controllers/' . strtolower(preg_replace("/controller/i", "", $className)) . EXT)) {
 		require_once(ROOT . '/spider/modules/admin/controllers/' . strtolower(preg_replace("/controller/i", "", $className)) . EXT);
 	}
 	
-		/*
+	/*		Fix in future like views
 	 *      ================
-	 *		| Load Users Module |
+	 *		| Load  Modules |
 	 *		================
 	 */
-	 //load users controllers
 	 
 	if (file_exists(ROOT . '/spider/modules/users/controllers/' . strtolower(preg_replace("/controller/i", "", $className)) . EXT)) {
 		require_once(ROOT . '/spider/modules/users/controllers/' . strtolower(preg_replace("/controller/i", "", $className)) . EXT);
+	}
+	
+	if (file_exists(ROOT . '/spider/modules/galleries/controllers/' . strtolower(preg_replace("/controller/i", "", $className)) . EXT)) {
+		require_once(ROOT . '/spider/modules/galleries/controllers/' . strtolower(preg_replace("/controller/i", "", $className)) . EXT);
 	}
 	
 }

@@ -20,3 +20,4 @@
 
 	// Layout
 	$config['layout'] = 'default';
+	$config['adminlayout'] = 'default';

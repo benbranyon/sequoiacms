@@ -11,7 +11,7 @@
 	<header>
 		<div id="header-content">
 			<div id="logo">
-				<?php echo $html->link('AdminHome', '', 'Un-named Website');?>
+				<?php echo $html->link('AdminHome', '/admin/', 'Un-named Website');?>
 				<h2 class="tag-line"></h2>
 			</div>
 			<div id="admin-nav">
@@ -19,9 +19,9 @@
 					<li class="first-level-nav">
 						<span>Content</span>
 						<ul style="display:none;">
-							<li><?php echo $html->link('Blog', 'admin/blog', 'Blog');?></li>
-							<li><?php echo $html->link('Pages', 'admin/pages', 'Pages');?></li>
-							<li><?php echo $html->link('Galleries', 'admin/galleries', 'Galleries');?></li>
+							<li><?php echo $html->link('Blog', '/admin/blog', 'Blog');?></li>
+							<li><?php echo $html->link('Pages', '/admin/pages', 'Pages');?></li>
+							<li><?php echo $html->link('Galleries', '/admin/galleries', 'Galleries');?></li>
 						</ul>
 					</li>
 					<li class="first-level-nav">
@@ -33,7 +33,7 @@
 					<li class="first-level-nav">
 						<span>Users</span>
 						<ul style="display:none;">
-							<li><?php echo $html->link('Manage Users', '/admin/manage', 'Manage Users');?></li>
+							<li><?php echo $html->link('Manage Users', '/admin/users', 'Manage Users');?></li>
 						</ul>
 					</li>
 					<li class="first-level-nav">
