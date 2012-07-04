@@ -4,12 +4,12 @@
 		<h1  class="admin-login">Log In</h1>
 		<fieldset id="inputs">
 			<p>
-				<label>Username</label>
+				<label for="username">Username</label>
 				<input id="username" name="username" type="text" class="admin1" placeholer="Username" autofocus required>
 			</p>
 			<br style="clear:both;"/>
 			<p>
-				<label>Password</label>
+				<label for="password">Password</label>
 				<input id="password" name="password" type="password" class="admin1" placeholer="Password" required>
 			</p>
 		</fieldset>
