@@ -1,6 +1,6 @@
 <?php
 
-class Adminview {
+class Admin_layout {
 	public $arr = array();
 	public $file;
     

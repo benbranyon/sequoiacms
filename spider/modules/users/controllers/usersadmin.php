@@ -11,7 +11,7 @@ class UsersadminController extends Controller
  */
 	public function index()
 	{
-		$view = new Adminview();
+		$view = new Admin_layout();
 		$result = mysql_query("SELECT * FROM users") or die(mysql_error());
 		$count = 0;
 		while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {

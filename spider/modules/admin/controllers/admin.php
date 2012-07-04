@@ -37,7 +37,7 @@ class AdminController extends Controller
 				$result = mysql_query("SELECT * FROM users WHERE id = '$user_id'")or die(mysql_error());
 				$user = mysql_fetch_object($result);
 				$user = get_object_vars($user);
-				$view = new Adminview();
+				$view = new Admin_layout();
 				$view->set('user', $user );
 				$view->render('index.php');
 			}
