@@ -21,5 +21,11 @@ class UsersadminController extends Controller
 		$view->set('users', $users);
 		$view->render('manage.php');
 	}
+	
+	public function manage_groups()
+	{
+		$view = new Admin_layout();
+		$view->render('manage_groups.php');
+	}
 
 }

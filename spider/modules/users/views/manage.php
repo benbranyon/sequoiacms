@@ -2,6 +2,11 @@
 	<div class="page-title">
 		<h2>Manage Users</h2>
 	</div>
+	<nav id="shortcuts">
+		<ul>
+			<li><?php echo $html->link('Add User','/admin/users/add','Add User');?></li>
+		</ul>
+	</nav>
 	<section class="title">Users</section>
 	<table class="admin1">
 		<thead>

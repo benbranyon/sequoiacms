@@ -242,6 +242,10 @@ function __autoload($className) {
 		require_once(ROOT . '/spider/modules/galleries/controllers/' . strtolower(preg_replace("/controller/i", "", $className)) . EXT);
 	}
 	
+	if (file_exists(ROOT . '/spider/modules/themes/controllers/' . strtolower(preg_replace("/controller/i", "", $className)) .EXT)) {
+		require_once(ROOT . '/spider/modules/themes/controllers/' . strtolower(preg_replace("/controller/i", "", $className)) . EXT);
+	}
+	
 }
 
 try {
