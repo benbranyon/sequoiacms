@@ -11,14 +11,28 @@ class GalleriesadminController extends Controller
  */
 	public function index()
 	{
-		$layout = new Admin_layout();
-		$layout->render('manage.php');
+		if($this->check_admin())
+		{
+			$layout = new Admin_layout();
+			$layout->render('manage.php');
+		}
+		else
+		{
+			$this->redirect('users/login');
+		}
 	}
 	
 	public function add()
 	{
-		$layout = new Admin_layout();
-		$layout->render('add.php');
+		if($this->check_admin())
+		{
+			$layout = new Admin_layout();
+			$layout->render('add.php');
+		}
+		else
+		{
+			$this->redirect('users/login');
+		}
 		
 	}
 

@@ -11,7 +11,15 @@ class ThemesadminController extends Controller
  */
 	public function index()
 	{
-		$view = new Admin_layout();
-		$view->render('manage.php');
+		if($this->check_admin())
+		{
+			$view = new Admin_layout();
+			$view->render('manage.php');
+		}
+		else
+		{
+			$this->redirect('users', 'login');
+		}
 	}
+	
 }

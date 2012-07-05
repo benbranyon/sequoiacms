@@ -10,9 +10,5 @@ class Model extends Database {
         // We just call the __construct of Database class.
         parent::__construct();
     }
-	
-	public function addUser()
-	{
-	}
 
 }
