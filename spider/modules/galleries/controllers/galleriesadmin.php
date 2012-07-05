@@ -11,8 +11,15 @@ class GalleriesadminController extends Controller
  */
 	public function index()
 	{
-		$view = new Admin_layout();
-		$view->render('manage.php');
+		$layout = new Admin_layout();
+		$layout->render('manage.php');
+	}
+	
+	public function add()
+	{
+		$layout = new Admin_layout();
+		$layout->render('add.php');
+		
 	}
 
 }

@@ -49,5 +49,14 @@ class UsersController extends Controller
 		session_destroy();
 		$this->redirect('admin', 'index');
 	}
+	
+	public function check_admin()
+	{	
+		if($result = mysql_query("SELECT * FROM users WHERE id =".$_SESSION['user_id']."")or die(mysql_error()))
+		{
+			return true;
+		}
+			return false;
+	}
 
 }

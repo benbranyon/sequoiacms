@@ -2,11 +2,9 @@
 	<div class="page-title">
 		<h2>Manage Users</h2>
 	</div>
+	<section class="title">Users</section>
 	<table class="admin1">
 		<thead>
-			<tr>
-				<td>Users</td>
-			</tr>
 			<tr>
 				<th>First Name</th>
 				<th>Last Name</th>
