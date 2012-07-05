@@ -54,4 +54,21 @@ abstract class Controller {
 	{
 		header("Location: ".HTTP_PATH.'/'.$controller.'/'.$action);
 	}
+	
+	public function check_login()
+	{
+	}
+	
+	public function check_admin()
+	{
+		if(isset($_SESSION['user_id']) && isset($_SESSION['user_group']))
+		{
+			if($_SESSION['user_group'] == 'admin')
+			{
+				return true;
+			}
+			return false;
+		}
+		return false;
+	}
 }

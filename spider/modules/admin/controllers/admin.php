@@ -9,6 +9,7 @@
 
 class AdminController extends Controller
 {
+	
 	/**
 	 * Constructor method
 	 *
@@ -18,7 +19,6 @@ class AdminController extends Controller
 	public function __construct()
 	{
   		parent::__construct();
-
  	}
 	
  	/**
@@ -29,10 +29,8 @@ class AdminController extends Controller
  	 */
  	public function index()
 	{
-		if(isset($_SESSION['user_id']) && isset($_SESSION['user_group']))
+		if($this->check_admin())
 		{
-			if($_SESSION['user_group'] == 'admin')
-			{
 				$user_id = $_SESSION['user_id'];
 				$result = mysql_query("SELECT * FROM users WHERE id = '$user_id'")or die(mysql_error());
 				$user = mysql_fetch_object($result);
@@ -40,7 +38,6 @@ class AdminController extends Controller
 				$view = new Admin_layout();
 				$view->set('user', $user );
 				$view->render('index.php');
-			}
 		}
 		else
 		{

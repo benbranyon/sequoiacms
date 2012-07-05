@@ -11,15 +11,20 @@ class UsersadminController extends Controller
  */
 	public function index()
 	{
-		$view = new Admin_layout();
-		$result = mysql_query("SELECT * FROM users") or die(mysql_error());
-		$count = 0;
-		while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
-			$users[$count] = $row;
-			$count++;
+		if($this->check_admin())
+		{
+			$view = new Admin_layout();
+			$result = mysql_query("SELECT * FROM users") or die(mysql_error());
+			$count = 0;
+			while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
+				$users[$count] = $row;
+				$count++;
+			}
+			$view->set('users', $users);
+			$view->render('manage.php');
+		} else {
+				$this->redirect('users', 'login');
 		}
-		$view->set('users', $users);
-		$view->render('manage.php');
 	}
 	
 	public function manage_groups()
