@@ -32,7 +32,15 @@ class UsersController extends Controller
 			{
 				$_SESSION['user_id'] = $user['id'];
 				$_SESSION['user_group'] = $user['group'];
-				$this->redirect('admin', 'index');
+				if($_SESSION['user_group'] = 'admin')
+				{
+					$this->redirect('admin', 'index');
+				}
+				else
+				{
+					$this->redirect('users', 'index');
+				}
+			
 			}
 		}
 		$view->render('login.php');

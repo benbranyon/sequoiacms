@@ -8,4 +8,13 @@
 		</ul>
 	</nav>
 	<section class="title">Themes</section>
+	<table class="admin1">
+		<thead>
+			<tr>
+				<th>Name</th>
+			</tr>
+		</thead>
+		<tbody>
+		</tbody>
+	</table>
 </div>

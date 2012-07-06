@@ -227,7 +227,6 @@ table.admin1 tbody tr:nth-child(odd) {
 /*** hover effect to table's tbody odd rows ***/
 table.admin1 tbody tr:nth-child(odd):hover
  {
-    cursor:pointer;
     /* add gradient */
     background-color: #808080;
     background: -webkit-gradient(linear, left top, left bottom, from(#606060), to(#909090));
@@ -243,7 +242,6 @@ table.admin1 tbody tr:nth-child(even) {
 /*** hover effect to apply to table's tbody section, even rows ***/
 table.admin1 tbody tr:nth-child(even):hover
  {
-    cursor:pointer;
     /* add gradient */
     background-color: #808080;
     background: -webkit-gradient(linear, left top, left bottom, from(#606060), to(#909090));
@@ -264,6 +262,10 @@ table.admin1 tbody tr.separator {
 table.admin1 td {
     vertical-align:middle;
     padding: 0.5em;
+}
+
+table.admin1 a {
+	text-decoration:none;
 }
 
 table.admin2

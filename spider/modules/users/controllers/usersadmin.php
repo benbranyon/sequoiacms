@@ -31,13 +31,20 @@ class UsersadminController extends Controller
 	{
 		if($this->check_admin())
 		{
-			$view = new Admin_layout();
-			$view->render('add.php');
+
+			if(!empty($_POST)){
+			}
+			else
+			{
+				$view = new Admin_layout();
+				$view->render('add.php');
+			}
 		}
 		else
 		{
 			$this->redirect('users', 'login');
 		}
+	
 	}
 	
 	public function manage_groups()

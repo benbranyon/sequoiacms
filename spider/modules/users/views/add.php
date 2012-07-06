@@ -9,7 +9,7 @@
 	</nav>
 	<section class="title">Add User</section>
 	<section class="form">
-		<?php echo '<form method="POST" enctype="multipart/form-data" action="/' . BASE_DIR . '/users/add" >';?>
+		<?php echo '<form method="POST" enctype="multipart/form-data" action="/' . BASE_DIR . '/admin/users/add" >';?>
 				<fieldset id="inputs">
 					<p>
 						<label for="username">User Name</label>

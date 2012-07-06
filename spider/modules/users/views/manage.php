@@ -15,6 +15,7 @@
 				<th>Last Name</th>
 				<th>Email</th>
 				<th>Group</th>
+				<th>Actions</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -24,6 +25,9 @@
 				<td><?php echo $user['last_name'];?></td>
 				<td><?php echo $user['email'];?></td>
 				<td><?php echo $user['group'];?></td>
+				<td>
+					<?php echo $html->link('Add User','/admin/users/edit','Edit');?>
+				</td>
 			</tr>
 			<?php endforeach;?>
 		</tbody>
