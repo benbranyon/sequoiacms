@@ -2,7 +2,7 @@
 	<?php echo '<form method="POST" enctype="multipart/form-data" action="/' . BASE_DIR . '/users/login" id = "login">';?>
 		<h1  class="admin-login">Log In</h1>
 		<fieldset id="inputs">
-			<p>
+			<ul>
 				<label for="username">Username</label>
 				<input id="username" name="username" type="text" class="admin1" placeholer="Username" autofocus required>
 			</p>
