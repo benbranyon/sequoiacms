@@ -215,11 +215,6 @@ input.admin2{
 	border-bottom: none !important;
 }
 
-form#admin2 fieldset#inputs {
- border:1px solid #EEE;
-}
-
-
 /** TABLE STYLES **/
 table.admin1 {
 	width: 100%;
@@ -307,7 +302,7 @@ section.title {
 	background:#565C59;
 	color:#FAFBFD;
 	margin-top:15px;
-	padding: 20px 15px 0px 17px;
+	padding: 20px 0px 0px 0px;
 	border-top-right-radius:5px;
 	-moz-border-radius-topright:5px;
 	-webkit-border-top-right-radius:5px;
@@ -319,7 +314,8 @@ section.title {
 section.form {
 	width:100%;
 	min-height:100px;
-	padding:16px;
+	padding-top:16px;
+	padding-bottom:16px;
 	background-color:white;
 	border-bottom-right-radius:5px;
 	-moz-border-radius-bottomright:5px;
