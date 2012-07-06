@@ -165,6 +165,7 @@ fieldset#actions {
 	width: 400px;
 }
 
+/** INPUT STYLES **/
 input.admin1{
 	width:200px;
 	-moz-border-radius: 4px;
@@ -176,6 +177,18 @@ input.admin1{
 	padding:8px;
 	font-size:13px;
 	
+}
+
+input.admin2{
+	width:200px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	background:white;
+	border: solid 1px black;
+	color:#434230;
+	padding:8px;
+	font-size:13px;
 }
 
 
@@ -252,6 +265,8 @@ table.admin1 td {
     vertical-align:middle;
     padding: 0.5em;
 }
+
+table.admin2
 
 /** Content styles **/
 section.title {

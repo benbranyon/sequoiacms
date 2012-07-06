@@ -10,6 +10,11 @@
 	<div>
 		<section class="title"><h4>Add Gallery</h4></section>
 		<section class="form">
+				<fieldset id="inputs">
+
+				</fieldset>
+				<fieldset id="actions">
+				</fieldset>
 		</section>
 	</div>
 </div>
