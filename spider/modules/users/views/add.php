@@ -7,7 +7,7 @@
 			<li><?php echo $html->link('Add User','/admin/users/add','Add User');?></li>
 		</ul>
 	</nav>
-	<section class="title">Add User</section>
+	<section class="title"><h4>Add User</h4></section>
 	<section class="form">
 		<?php echo '<form method="POST" enctype="multipart/form-data" id="admin2" action="/' . BASE_DIR . '/admin/users/add" >';?>
 				<fieldset id="inputs">

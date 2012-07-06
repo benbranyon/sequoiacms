@@ -7,5 +7,5 @@
 			<li></li>
 		</ul>
 	</nav>
-	<section class="title">Welcome, <?php echo $user['first_name'] . ' ' . $user['last_name'] ;?></section>
+	<section class="title"><h4>Welcome, <?php echo $user['first_name'] . ' ' . $user['last_name'] ;?></h4></section>
 </div>

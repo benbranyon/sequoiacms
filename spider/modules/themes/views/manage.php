@@ -7,7 +7,7 @@
 			<li><?php echo $html->link('Upload Theme','/admin/themes/uploa','Upload Theme');?></li>
 		</ul>
 	</nav>
-	<section class="title">Themes</section>
+	<section class="title"><h4>Themes</h4></section>
 	<table class="admin1">
 		<thead>
 			<tr>

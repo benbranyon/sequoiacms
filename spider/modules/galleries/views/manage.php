@@ -7,6 +7,6 @@
 			<li><?php echo $html->link('Add Gallery','/admin/galleries/add','Add Gallery');?></li>
 		</ul>
 	</nav>
-	<section class="title">Galleries</section>
+	<section class="title"><h4>Galleries</h4></section>
 </div>
 	

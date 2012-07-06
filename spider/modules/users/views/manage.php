@@ -7,7 +7,7 @@
 			<li><?php echo $html->link('Add User','/admin/users/add','Add User');?></li>
 		</ul>
 	</nav>
-	<section class="title">Users</section>
+	<section class="title"><h4>Users</h4></section>
 	<table class="admin1">
 		<thead>
 			<tr>

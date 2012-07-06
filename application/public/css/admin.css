@@ -311,6 +311,10 @@ section.title {
 	-webkit-border-top-left-radius:5px;
 }
 
+section.title h4 {
+	text-align: center;
+}
+
 section.form {
 	width:100%;
 	min-height:100px;

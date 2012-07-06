@@ -7,5 +7,5 @@
 			<li><?php echo $html->link('Add Group','/admin/users/add_group','Add Group');?></li>
 		</ul>
 	</nav>
-	<section class="title">Groups</section>
+	<section class="title"><h4>Groups</h4></section>
 </div>
