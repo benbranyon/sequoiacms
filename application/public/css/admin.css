@@ -1,12 +1,12 @@
 header {
 	height: 60px;
 	color: white;
-	background-color:#1B1B1B;
+	background-color:#565C59;
 }
 
 body {
 	background-color: #B8B0A8;
-
+	font: normal 26px/1 Verdana, Helvetica
 }
 
 #header-content {
@@ -74,13 +74,18 @@ li.first-level-nav {
 	text-decoration:none;
 }
 
+#shortcuts a {
+	font-size:14px;
+	text-decoration:none;
+}
+
 #content-wrapper {
 	width: 980px;
 	margin: 0 auto;
 }
 
 .page-title { height: 30px; padding-top:15px;}
-.page-title h2 { font-size: 28px; }
+.page-title h2 { font-size: 28px; color:#565C59;text-shadow:0 1px 0 rgba(255, 255, 255, .7), 0px 2px 0 rgba(0, 0, 0, .5); }
 
 h1.admin-login
 {
@@ -145,6 +150,11 @@ body#admin-login {
 #admin-login a {
 	text-decoration:none;
 	color:#434230;
+	font-size:14px;
+}
+
+#submit {
+	font-size:18px;
 }
 
 fieldset#actions {
@@ -158,6 +168,7 @@ fieldset#actions {
 	line-heigh:14px;
 	margin-top:-4px;
 	color:#434230;
+	font-size:14px;
 }
 
 #login {    
@@ -220,7 +231,7 @@ table.admin1 {
 	width: 100%;
     border-collapse:collapse;
     text-align:left;
-    color: #606060;
+    color: #434230;
 }
 
 /*** table's thead section, head row style ***/
@@ -289,6 +300,7 @@ table.admin1 td {
 
 table.admin1 a {
 	text-decoration:none;
+	color:#434230
 }
 
 table.admin2 {
