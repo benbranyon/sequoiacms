@@ -85,10 +85,10 @@ define ('ADMIN_LAYOUT', $config['adminlayout']);
  
  //load database config
  require_once('application/config/database.php');
- require_once('spider/database/database.php');
+ require_once('sequoia/database/database.php');
  
  //Connect to database
- require_once('spider/database/database_conn.php');
+ require_once('sequoia/database/database_conn.php');
  $db_conn = new database_conn();
  $db_conn->connect($db_default);
  $db_conn->select_db($db_default);

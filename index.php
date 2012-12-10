@@ -10,4 +10,4 @@ define('ROOT', dirname(__FILE__));
  * And away we go...
  *
  */
-require_once 'spider/core/bootstrap.php';
+require_once 'sequoia/core/bootstrap.php';
